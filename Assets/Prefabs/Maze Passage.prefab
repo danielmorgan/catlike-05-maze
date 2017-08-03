@@ -9,55 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1929902413285906}
+  m_RootGameObject: {fileID: 1525964002204434}
   m_IsPrefabParent: 1
---- !u!1 &1929902413285906
+--- !u!1 &1525964002204434
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4667739612814194}
-  - component: {fileID: 114696599910288302}
+  - component: {fileID: 4104356000385852}
+  - component: {fileID: 114960015289037238}
   m_Layer: 0
-  m_Name: Maze
+  m_Name: Maze Passage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4667739612814194
+--- !u!4 &4104356000385852
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1929902413285906}
+  m_GameObject: {fileID: 1525964002204434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.995147, y: 3.4410806, z: -0.20253788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114696599910288302
+--- !u!114 &114960015289037238
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1929902413285906}
+  m_GameObject: {fileID: 1525964002204434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19477a97f234b4669b614c2450c6db6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dbb9bb4286149c5a53c0d62bbaac781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size:
-    x: 20
-    z: 20
-  generationStepDelay: 0.01
-  cellPrefab: {fileID: 114706416640514280, guid: dde1a00eec57a4d70b3fca3496ee6d7c,
-    type: 2}
-  passagePrefab: {fileID: 114960015289037238, guid: ba8c45101e06d4cad81694c369f5419a,
-    type: 2}
-  wallPrefab: {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301,
-    type: 2}
+  parentCell: {fileID: 0}
+  neighbourCell: {fileID: 0}
+  direction: 0

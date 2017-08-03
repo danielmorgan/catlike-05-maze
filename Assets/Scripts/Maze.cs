@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Maze : MonoBehaviour {
 
-    public int sizeX, sizeZ;
+    public IntVector2 size;
     public float generationStepDelay;
 
     public MazeCell cellPrefab;
@@ -13,26 +13,43 @@ public class Maze : MonoBehaviour {
     public IEnumerator Generate() {
         WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
 
-        cells = new MazeCell[sizeX, sizeZ];
+        cells = new MazeCell[size.x, size.z];
 
-        for (int x = 0; x < sizeX; x++) {
-            for (int z = 0; z < sizeZ; z++) {
-                yield return delay;
-                CreateCell(x, z);
-            }
+        IntVector2 coords = RandomCoords;
+        while (ContainsCoords(coords) && GetCell(coords) == null) {
+            yield return delay;
+            CreateCell(coords);
+            coords += MazeDirections.RandomValue.ToIntVector2();
         }
     }
 
-    private void CreateCell (int x, int z) {
+    private void CreateCell (IntVector2 coords) {
         MazeCell newCell = Instantiate(cellPrefab) as MazeCell;
-        newCell.name = "Maze Cell " + x + ", " + z;
+        newCell.name = "Maze Cell " + coords.x + ", " + coords.z;
         newCell.transform.parent = transform;
         newCell.transform.localPosition = new Vector3(
-            x - sizeX * 0.5f + 0.5f,
+            coords.x - size.x * 0.5f + 0.5f,
             0f,
-            z - sizeZ * 0.5f + 0.5f
+            coords.z - size.z * 0.5f + 0.5f
         );
 
-        cells[x, z] = newCell;
+        cells[coords.z, coords.z] = newCell;
+    }
+
+    public bool ContainsCoords (IntVector2 coords) {
+        return coords.x >= 0 &&
+               coords.z >= 0 &&
+               coords.x < size.x &&
+               coords.z < size.z;
+    }
+
+    public MazeCell GetCell (IntVector2 coords) {
+        return cells[coords.x, coords.z];
+    }
+
+    public IntVector2 RandomCoords {
+        get {
+            return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
+        }
     }
 }

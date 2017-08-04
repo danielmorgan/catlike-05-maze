@@ -16,18 +16,14 @@ public class Maze : MonoBehaviour {
     public MazeWall wallPrefab;
 
     private MazeCell[,] cells;
-    
-    private IEnumerator WaitForKeyDown(KeyCode keyCode)
-    {
-        while (!Input.GetKeyDown(keyCode))
-            yield return null;
-    }
 
-    public void Generate() {
+    public IEnumerator Generate() {
+        WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
         cells = new MazeCell[size.x, size.z];
         List<MazeCell> activeCells = new List<MazeCell>();
         DoFirstGenerationStep(activeCells);
         while (activeCells.Count > 0) {
+            yield return delay;
             DoNextGenerationStep(activeCells);
         }
     }
@@ -57,14 +53,13 @@ public class Maze : MonoBehaviour {
             }
         }
         else {
-            
             CreateWall(currentCell, null, direction);
         }
     }
 
     private MazeCell CreateCell(IntVector2 coordinates) {
         MazeCell newCell = Instantiate(cellPrefab);
-        cells[coordinates.z, coordinates.z] = newCell;
+        cells[coordinates.x, coordinates.z] = newCell;
         newCell.coordinates = coordinates;
         newCell.name = "Maze Cell " + coordinates.x + ", " + coordinates.z;
         newCell.transform.parent = transform;
@@ -97,7 +92,7 @@ public class Maze : MonoBehaviour {
     }
 
     public MazeCell GetCell(IntVector2 coordinates) {
-        return this.cells[coordinates.x, coordinates.z];
+        return cells[coordinates.x, coordinates.z];
     }
 
     public IntVector2 RandomCoordinates {

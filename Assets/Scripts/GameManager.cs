@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    
+
     public Maze mazePrefab;
-    
+
     private Maze mazeInstance;
 
-    private void Start() {
+    private void Start () {
         BeginGame();
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
+    private void Update () {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             RestartGame();
         }
     }
 
-    private void BeginGame() {
+    private void BeginGame () {
         mazeInstance = Instantiate(mazePrefab) as Maze;
-        mazeInstance.Generate();
+        StartCoroutine(mazeInstance.Generate());
     }
 
-    private void RestartGame() {
+    private void RestartGame () {
         StopAllCoroutines();
         Destroy(mazeInstance.gameObject);
         BeginGame();

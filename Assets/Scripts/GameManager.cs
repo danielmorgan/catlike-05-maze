@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+    
     public Maze mazePrefab;
+    
     private Maze mazeInstance;
 
     private void Start() {
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour {
 
     private void BeginGame() {
         mazeInstance = Instantiate(mazePrefab) as Maze;
-        StartCoroutine(mazeInstance.Generate());
+        mazeInstance.Generate();
     }
 
     private void RestartGame() {

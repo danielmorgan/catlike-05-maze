@@ -52,12 +52,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size:
-    x: 20
-    z: 20
+    x: 10
+    z: 10
   cellPrefab: {fileID: 114706416640514280, guid: dde1a00eec57a4d70b3fca3496ee6d7c,
     type: 2}
-  generationStepDelay: 0.01
+  generationStepDelay: 0
   passagePrefab: {fileID: 114960015289037238, guid: ba8c45101e06d4cad81694c369f5419a,
     type: 2}
-  wallPrefab: {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301,
+  doorPrefab: {fileID: 114268229218348568, guid: 1b285fd960ac8426bb74dd3df33f7507,
     type: 2}
+  doorProbability: 0.1
+  wallPrefabs:
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114639691781716940, guid: 3fd2581e172a34384bfdc52f0cac9301, type: 2}
+  - {fileID: 114208219108526440, guid: e7c374603c028491083e2656edbc451a, type: 2}
+  - {fileID: 114937817704448994, guid: bf3db14dfc56647e0a3eaa133598c339, type: 2}
+  - {fileID: 114587416943531436, guid: 4f00b24f6e7664b4ebf1cbe6bd6a1971, type: 2}

@@ -20,7 +20,11 @@ public class Maze : MonoBehaviour {
     
     public MazeWall[] wallPrefabs;
 
+    public MazeRoomSettings[] roomSettings;
+
     private MazeCell[,] cells;
+
+    private List<MazeRoom> rooms = new List<MazeRoom>();
 
     public IEnumerator Generate() {
         WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
@@ -34,7 +38,9 @@ public class Maze : MonoBehaviour {
     }
 
     private void DoFirstGenerationStep(List<MazeCell> activeCells) {
-        activeCells.Add(CreateCell(RandomCoordinates));
+        MazeCell newCell = CreateCell(RandomCoordinates);
+        newCell.Initialize(CreateRoom(-1));
+        activeCells.Add(newCell);
     }
 
     private void DoNextGenerationStep(List<MazeCell> activeCells) {
@@ -81,6 +87,12 @@ public class Maze : MonoBehaviour {
         MazePassage passage = Instantiate(prefab);
         passage.Initialize(parentCell, neighbourCell, direction);
         passage = Instantiate(prefab);
+        if (passage is MazeDoor) {
+            neighbourCell.Initialize(CreateRoom(parentCell.room.settingsIndex));
+        }
+        else {
+            neighbourCell.Initialize(parentCell.room);
+        }
         passage.Initialize(neighbourCell, parentCell, direction.GetOpposite());
     }
 
@@ -91,6 +103,17 @@ public class Maze : MonoBehaviour {
             wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]);
             wall.Initialize(neighbourCell, parentCell, direction.GetOpposite());
         }
+    }
+
+    private MazeRoom CreateRoom(int indexToExclude) {
+        MazeRoom newRoom = ScriptableObject.CreateInstance<MazeRoom>();
+        newRoom.settingsIndex = Random.Range(0, roomSettings.Length);
+        if (newRoom.settingsIndex == indexToExclude) {
+            newRoom.settingsIndex = (newRoom.settingsIndex + 1) % roomSettings.Length;
+        }
+        newRoom.settings = roomSettings[newRoom.settingsIndex];
+        rooms.Add(newRoom);
+        return newRoom;
     }
 
     public bool ContainsCoordinates (IntVector2 coordinate) {

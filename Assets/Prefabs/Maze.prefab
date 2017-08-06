@@ -73,3 +73,12 @@ MonoBehaviour:
   - {fileID: 114208219108526440, guid: e7c374603c028491083e2656edbc451a, type: 2}
   - {fileID: 114937817704448994, guid: bf3db14dfc56647e0a3eaa133598c339, type: 2}
   - {fileID: 114587416943531436, guid: 4f00b24f6e7664b4ebf1cbe6bd6a1971, type: 2}
+  roomSettings:
+  - floorMaterial: {fileID: 2100000, guid: 944f4f3e57cc541e8be75e2617f10d84, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 1f4a62d7428d74d7990d586e4bfbebb8, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: e656d81fe4f7643f58df653aa1e96d01, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 53e0f32346256446a939a7a7a84a5a7d, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 1eff7da62e4c1438fb725b14820961f7, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 6ee156ca550674acf83774d246467859, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 10c2bfffa6d9e49978bdaf3d9cf88282, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 1a9182736b1c748ea94915cc4b26b090, type: 2}

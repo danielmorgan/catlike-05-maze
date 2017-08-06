@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e243f52ffb544a0a9c71e4bb2057b857
+timeCreated: 1502018345
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - parentCell: {instanceID: 0}
+  - neighbourCell: {instanceID: 0}
+  - floorMaterial: {instanceID: 0}
+  - wallMaterial: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

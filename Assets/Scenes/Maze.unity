@@ -276,15 +276,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1769372521
+--- !u!1 &1064751145
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1769372523}
-  - component: {fileID: 1769372522}
+  - component: {fileID: 1064751147}
+  - component: {fileID: 1064751146}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -292,12 +292,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1769372522
+--- !u!114 &1064751146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769372521}
+  m_GameObject: {fileID: 1064751145}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6cc27675a09f44d99450c0fe128ffe0, type: 3}
@@ -305,14 +305,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazePrefab: {fileID: 114696599910288302, guid: 3392062d54dcb45fd8cf804c8e5ff8f1,
     type: 2}
---- !u!4 &1769372523
+--- !u!4 &1064751147
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769372521}
+  m_GameObject: {fileID: 1064751145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.2215796, y: 0.1552329, z: 0.29639706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

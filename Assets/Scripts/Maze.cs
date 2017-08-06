@@ -59,6 +59,9 @@ public class Maze : MonoBehaviour {
                 CreatePassage(currentCell, neighbour, direction);
                 activeCells.Add(neighbour);
             }
+            else if (currentCell.room.settingsIndex == neighbour.room.settingsIndex) {
+                CreatePassageInSameRoom(currentCell, neighbour, direction);
+            }
             else {
                 CreateWall(currentCell, neighbour, direction);
             }
@@ -94,6 +97,18 @@ public class Maze : MonoBehaviour {
             neighbourCell.Initialize(parentCell.room);
         }
         passage.Initialize(neighbourCell, parentCell, direction.GetOpposite());
+    }
+
+    private void CreatePassageInSameRoom(MazeCell parentCell, MazeCell neighbourCell, MazeDirection direction) {
+        MazePassage passage = Instantiate(passagePrefab);
+        passage.Initialize(parentCell, neighbourCell, direction);
+        passage = Instantiate(passagePrefab);
+        passage.Initialize(neighbourCell, parentCell, direction.GetOpposite());
+        if (parentCell.room != neighbourCell.room) {
+            parentCell.room.Assimilate(neighbourCell.room);
+            rooms.Remove(neighbourCell.room);
+            Destroy(neighbourCell.room);
+        }
     }
 
     private void CreateWall(MazeCell parentCell, MazeCell neighbourCell, MazeDirection direction) {

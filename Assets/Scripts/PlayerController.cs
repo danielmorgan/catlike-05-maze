@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour {
         motor = GetComponent<PlayerMotor>();
     }
 
+    public void SetLocation(MazeCell cell) {
+        transform.localPosition = cell.transform.localPosition;
+    }
+
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

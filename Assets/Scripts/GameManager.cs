@@ -6,10 +6,14 @@ public class GameManager : MonoBehaviour {
 
     public Maze mazePrefab;
 
+    public PlayerController playerPrefab;
+    
+    private PlayerController playerInstance;
+
     private Maze mazeInstance;
 
     private void Start () {
-        BeginGame();
+        StartCoroutine(BeginGame());
     }
 
     private void Update () {
@@ -18,14 +22,20 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private void BeginGame () {
-        mazeInstance = Instantiate(mazePrefab) as Maze;
-        StartCoroutine(mazeInstance.Generate());
+    private IEnumerator BeginGame () {
+        mazeInstance = Instantiate(mazePrefab);
+        yield return StartCoroutine(mazeInstance.Generate());
+        
+        playerInstance = Instantiate(playerPrefab);
+        playerInstance.SetLocation(mazeInstance.GetCell(mazeInstance.RandomCoordinates));
     }
 
     private void RestartGame () {
         StopAllCoroutines();
         Destroy(mazeInstance.gameObject);
-        BeginGame();
+        if (playerInstance != null) {
+            Destroy(playerInstance.gameObject);
+        }
+        StartCoroutine(BeginGame());
     }
 }

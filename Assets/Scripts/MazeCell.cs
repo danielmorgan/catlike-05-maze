@@ -23,7 +23,6 @@ public class MazeCell : MonoBehaviour {
 
     public bool IsFullyInitialized {
         get {
-//            Debug.Log("initializedEdgeCount: " + initializedEdgeCount);
             return initializedEdgeCount == MazeDirections.Count;
         }
     }
@@ -31,7 +30,6 @@ public class MazeCell : MonoBehaviour {
     public void SetEdge(MazeDirection direction, MazeCellEdge edge) {
         edges[(int) direction] = edge;
         initializedEdgeCount += 1;
-//        Debug.Log(this.coordinates.x + ", " + this.coordinates.z + " - " + initializedEdgeCount);
     }
     
     public MazeDirection RandomUninitializedDirection {

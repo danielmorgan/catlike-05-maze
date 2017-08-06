@@ -137,3 +137,4 @@ MonoBehaviour:
   parentCell: {fileID: 0}
   neighbourCell: {fileID: 0}
   direction: 0
+  wall: {fileID: 4411511190770500}

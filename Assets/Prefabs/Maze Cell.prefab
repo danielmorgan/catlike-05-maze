@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33558806003956962}
   - component: {fileID: 64289445342189066}
   - component: {fileID: 23069589196936932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,3 +139,4 @@ MonoBehaviour:
   coordinates:
     x: 0
     z: 0
+  room: {fileID: 0}

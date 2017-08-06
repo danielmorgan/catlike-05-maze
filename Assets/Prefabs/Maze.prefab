@@ -56,7 +56,7 @@ MonoBehaviour:
     z: 10
   cellPrefab: {fileID: 114706416640514280, guid: dde1a00eec57a4d70b3fca3496ee6d7c,
     type: 2}
-  generationStepDelay: 0
+  generationStepDelay: 0.02
   passagePrefab: {fileID: 114960015289037238, guid: ba8c45101e06d4cad81694c369f5419a,
     type: 2}
   doorPrefab: {fileID: 114268229218348568, guid: 1b285fd960ac8426bb74dd3df33f7507,

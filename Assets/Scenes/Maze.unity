@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 412143155}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.01, z: -0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -205,6 +205,8 @@ GameObject:
   - component: {fileID: 855176481}
   - component: {fileID: 855176480}
   - component: {fileID: 855176479}
+  - component: {fileID: 855176484}
+  - component: {fileID: 855176485}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -251,8 +253,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20
-  orthographic: 1
+  field of view: 30
+  orthographic: 0
   orthographic size: 6
   m_Depth: -1
   m_CullingMask:
@@ -282,6 +284,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: -45, z: 0}
+--- !u!114 &855176484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855176478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 6f7a43bf49f694d259682ae9413fd1e4, type: 2}
+--- !u!114 &855176485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855176478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5162e1cba9c12412088d846128f65879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 412143159}
+  offset: {x: -2, y: -5, z: 2}
+  zoomSpeed: 5
+  minZoom: 1
+  maxZoom: 6
+  pitch: 1
 --- !u!1 &995677167
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,19 +338,19 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.8235294, g: 0.8121704, b: 0.72058827, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 200
   m_SpotAngle: 30
-  m_CookieSize: 10
+  m_CookieSize: 1
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.19
+    m_Bias: 0
+    m_NormalBias: 0.22
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -329,7 +360,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.1
   m_FalloffTable:
     m_Table[0]: 0
     m_Table[1]: 0
@@ -392,6 +423,7 @@ MonoBehaviour:
     type: 2}
   playerPrefab: {fileID: 114205995892693196, guid: 73d7b8cd4ad534e428fd9592924fec74,
     type: 2}
+  cameraController: {fileID: 855176485}
 --- !u!4 &1064751147
 Transform:
   m_ObjectHideFlags: 0

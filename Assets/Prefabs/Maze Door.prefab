@@ -71,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4557893989328076}
   - component: {fileID: 33772043611295850}
-  - component: {fileID: 65936448549705204}
   - component: {fileID: 23216112750029456}
   m_Layer: 0
   m_Name: Door
@@ -141,7 +140,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4661588405618152}
   - component: {fileID: 33823207853004656}
-  - component: {fileID: 65193600926970318}
   - component: {fileID: 23954409419077844}
   m_Layer: 0
   m_Name: Handle
@@ -495,18 +493,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345679819496152}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65193600926970318
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1945023622373112}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65372877156627860
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -549,18 +535,6 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1508170631818766}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65936448549705204
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1415599980929612}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

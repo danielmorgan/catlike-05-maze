@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466588076979778}
   - component: {fileID: 195078588680841354}
-  - component: {fileID: 136889890010518156}
+  - component: {fileID: 65974535260634018}
   - component: {fileID: 54912176859982030}
   - component: {fileID: 114205995892693196}
   - component: {fileID: 114993748464358002}
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1802560325665852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.54, y: 0, z: 1.479}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.7, z: 0.3}
   m_Children:
   - {fileID: 4654593030902438}
   m_Father: {fileID: 0}
@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 1251515897290430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.4, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.7, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4466588076979778}
   m_RootOrder: 0
@@ -129,6 +129,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65974535260634018
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802560325665852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114205995892693196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,19 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementMarkerPrefab: {fileID: 23010306173825284, guid: dfbb7304f8c824ae097cc4597787bf6a,
     type: 2}
---- !u!136 &136889890010518156
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1802560325665852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 0.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!195 &195078588680841354
 NavMeshAgent:
   m_ObjectHideFlags: 1

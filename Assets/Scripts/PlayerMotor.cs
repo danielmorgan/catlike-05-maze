@@ -19,16 +19,17 @@ public class PlayerMotor : MonoBehaviour {
         if (movementMarker != null) {
             Destroy(movementMarker.gameObject);
         }
-        
-        movementMarker = Instantiate<MeshRenderer>(movementMarkerPrefab, point, Quaternion.identity) as MeshRenderer;
+
+        movementMarker = Instantiate(movementMarkerPrefab, point, Quaternion.identity) as MeshRenderer;
         agent.SetDestination(point);
     }
 
     private void Update() {
-        if (movementMarker != null) {
-            if (agent.remainingDistance < 0.2f) {
-                Destroy(movementMarker.gameObject);
-            }
+        if (movementMarker == null) return;
+        if (agent.pathPending) return;
+
+        if (agent.remainingDistance < 0.2f) {
+            Destroy(movementMarker.gameObject);
         }
     }
 }

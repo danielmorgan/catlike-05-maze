@@ -20,7 +20,7 @@ public class PlayerMotor : MonoBehaviour {
             Destroy(movementMarker.gameObject);
         }
 
-        movementMarker = Instantiate(movementMarkerPrefab, point, Quaternion.identity) as MeshRenderer;
+        movementMarker = Instantiate<MeshRenderer>(movementMarkerPrefab, point, Quaternion.identity) as MeshRenderer;
         agent.SetDestination(point);
     }
 
